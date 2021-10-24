@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="MySQL - carparkservlet@localhost" uuid="3da2bdb4-9954-499d-95ff-c6c10a5c587a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/carparkservlet</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="servlet-jdbc-1@localhost" uuid="55a2ae41-12fb-471a-a586-945e377c5737">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/servlet-jdbc-1</jdbc-url>
+    </data-source>
+  </component>
+</project>
