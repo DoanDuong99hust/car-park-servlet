@@ -79,6 +79,7 @@
                             </div>
                             <div>
                                 <input class="p-1 m-1 border rounded" type="password" name="password" id="password" value="${model.password}" placeholder="Enter password">
+                                <div id="password-warning" class="text-danger small"></div>
                             </div>
                             <div>
                                 <select class="p-1 m-1 border rounded" name="department" id="department">
@@ -106,13 +107,28 @@
             </div>
             </div>
             <script>
+                function checkPassword(password) {
+                    var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/;
+                    if (pattern.test(password)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+                $('#password').change(function() {
+                    var password = $('#password').val()
+                    console.log("change")
+                    console.log(checkPassword(password))
+                    if (checkPassword(password)) {
+                        $('#password').removeClass('border-danger')
+                        $('#password-warning').html("")
+                    } else {
+                        $('#password').addClass('border-danger')
+                        $('#password-warning').html("The password must have at least 6 characters,including uppercase, lowercase and number.")
+                    }
+                })
                 function addOrUpdateData() {
-                    // e.preventDefault();
                     var data = {};
-                    // var formData = $('#formSubmit').serializeArray();
-                    // $.each(formData, function (index, value) {
-                    //     data[""+value.name+""] = value.value;
-                    // })
                     data["employeeName"] = $('#employeeName').val()
                     data["employeePhone"] = $('#employeePhone').val()
                     data["employeeBirthday"] = $('#employeeBirthday').val()
