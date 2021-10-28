@@ -11,12 +11,12 @@
     </decorator>
 
     <decorator name="carpark" page="carpark.jsp">
-        <pattern>/carpark*</pattern>
+        <pattern>/car-park*</pattern>
     </decorator>
 
-    <decorator name="web" page="index.jsp">
-        <pattern>/*</pattern>
-    </decorator>
+<!--    <decorator name="web" page="index.jsp">-->
+<!--        <pattern>/*</pattern>-->
+<!--    </decorator>-->
 
 <!--    <decorator name="login" page="login.jsp">-->
 <!--        <pattern>/dang-nhap</pattern>-->

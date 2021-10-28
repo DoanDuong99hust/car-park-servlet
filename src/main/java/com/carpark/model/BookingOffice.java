@@ -2,7 +2,7 @@ package com.carpark.model;
 
 import java.util.Date;
 
-public class BookingOffice {
+public class BookingOffice extends AbstractModel<BookingOffice> {
 
 	private Long officeId;
 	private String officeName;
@@ -10,8 +10,8 @@ public class BookingOffice {
 	private String officePhone;
 	private String officePlace;
 	private Long officePrice;
-	private Date startContractDate;
-	private Date endContractDate;
+	private String startContractDate;
+	private String endContractDate;
 	
 	public Long getOfficeId() {
 		return officeId;
@@ -49,16 +49,16 @@ public class BookingOffice {
 	public void setOfficePrice(Long officePrice) {
 		this.officePrice = officePrice;
 	}
-	public Date getStartContractDate() {
+	public String getStartContractDate() {
 		return startContractDate;
 	}
-	public void setStartContractDate(Date startContractDate) {
+	public void setStartContractDate(String startContractDate) {
 		this.startContractDate = startContractDate;
 	}
-	public Date getEndContractDate() {
+	public String getEndContractDate() {
 		return endContractDate;
 	}
-	public void setEndContractDate(Date endContractDate) {
+	public void setEndContractDate(String endContractDate) {
 		this.endContractDate = endContractDate;
 	}
 	

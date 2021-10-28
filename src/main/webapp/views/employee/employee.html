@@ -26,24 +26,46 @@
         <div class="row w-100">
             <!-- Left menu  -->
             <div class="col-sm-3 bg-light p-0 border h-auto">
-                <div>
-                    <div class="bg-light border">
-                        <div class="row mt-3 mb-3 justify-content-center">
-                            <span class="text-primary">Dashbroad</span>
-                        </div>
+                <div class="bg-light border">
+                    <div class="row mt-3 mb-3 justify-content-center">
+                        <span class="text-primary"><i class="fas fa-home"></i> Car park manager</span>
                     </div>
-                    <div class="dropdown bg-light">
+                </div>
+                <div>
+                    <div id="car-management" class="dropdown bg-light">
                         <div class="btn btn-light d-flex justify-content-center dropdown-toggle" data-toggle="dropdown">
-                            <span> <i class="fas fa-chart-bar"></i> Employee Management</span>
+                            <span> <i class="fas fa-car"></i> Car Management</span>
                         </div>
                         <div class="dropdown-menu bg-light border-0">
-                            <a class="dropdown-item" href="#"><i class="fas fa-list"></i> Employee list</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> Add employee</a>
+                            <a class="dropdown-item" href='<c:url value="/employee-list?type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"/>'><i class="fas fa-list"></i> Employee list</a>
+                            <a class="dropdown-item" href='<c:url value="/employee-list?type=edit"/>'><i class="fas fa-plus"></i> Add employee</a>
                         </div>
                     </div>
                 </div>
-                <div class="btn btn-danger"></div>
+                <div>
+                    <div id="booking-office" class="dropdown bg-light">
+                        <div class="btn btn-light d-flex justify-content-center dropdown-toggle" data-toggle="dropdown">
+                            <span> <i class="fas fa-cart-arrow-down"></i> Booking office Management</span>
+                        </div>
+                        <div class="dropdown-menu bg-light border-0">
+                            <a class="dropdown-item" href='<c:url value="/employee-list?type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"/>'><i class="fas fa-list"></i> Employee list</a>
+                            <a class="dropdown-item" href='<c:url value="/employee-list?type=edit"/>'><i class="fas fa-plus"></i> Add employee</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="parking-lot" class="dropdown bg-light">
+                        <div class="btn btn-light d-flex justify-content-center dropdown-toggle" data-toggle="dropdown">
+                            <span> <i class="fas fa-map-marker-alt"></i> Parking lot Management</span>
+                        </div>
+                        <div class="dropdown-menu bg-light border-0">
+                            <a class="dropdown-item" href='<c:url value="/parkinglot-list?type=list"/>'><i class="fas fa-list"></i> Parking lot list</a>
+                            <a class="dropdown-item" href='<c:url value="/parkinglot-list?type=edit"/>'><i class="fas fa-plus"></i> Add employee</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
 
             <!-- Right content  -->
 
@@ -143,6 +165,20 @@
     <script>
     </script>
     <script>
+        $(document).ready(function() {
+            $('#car-management').toggle(
+                function() {
+                    $('#car-management').css({
+                        "color": "red"
+                    });
+                },
+                function() {
+                    $('#car-management').css({
+                        "color": "green"
+                    });
+                })
+        });
+
         function checkPassword(password) {
             var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/;
             if (pattern.test(password)) {
@@ -237,9 +273,5 @@
         }
     </script>
 </body>
-
-</html>
-
-</html>
 
 </html>

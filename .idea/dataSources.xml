@@ -13,5 +13,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/servlet-jdbc-1</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - d4b16sopkuj9pu@ec2-52-201-72-91.compute-1.amazonaws.com" uuid="08f3b237-c72e-44ce-a77f-82740063c5dc">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-52-201-72-91.compute-1.amazonaws.com:5432/d4b16sopkuj9pu</jdbc-url>
+    </data-source>
   </component>
 </project>
