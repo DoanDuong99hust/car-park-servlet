@@ -152,6 +152,7 @@
                       addNew(data)
                     } else {
                       data["employeeId"] = id
+                        console.log(data)
                       updateNew(data)
                     }
                   }
@@ -182,8 +183,8 @@
                         data: JSON.stringify(data),
                         dataType: 'json',
                         success: function(result) {
-                            window.location.href = "${NewURL}?type=edit&id=" + result.employeeId + "&message=update_success";
-                            window.location.href = "${NewURL}?type=type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"
+                            <%--window.location.href = "${NewURL}?type=edit&id=" + result.employeeId + "&message=update_success";--%>
+                            <%--window.location.href = "${NewURL}?type=type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"--%>
                         },
                         error: function(error) {
                             window.location.href = "${NewURL}?type=list&maxPageItem=3&page=1&message=error_system";

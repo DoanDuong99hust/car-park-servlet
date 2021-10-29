@@ -1,6 +1,6 @@
 package com.carpark.model;
 
-public class ParkingLot {
+public class ParkingLot extends AbstractModel<ParkingLot>{
 	
 	private Long parkId;
 	private String parkName;

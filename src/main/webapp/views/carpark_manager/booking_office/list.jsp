@@ -96,7 +96,7 @@
                 var currentPage = ${
                     model.page
                 };
-                var limit = 3;
+                var limit = 2;
                 $(function() {
                     $('#pagination').twbsPagination({
                         totalPages: totalPages,

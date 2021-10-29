@@ -30,11 +30,11 @@ public class BookingOfficeDAO extends AbstractDAO<BookingOffice> implements IBoo
 
     @Override
     public void update(BookingOffice updateBookingOffice) {
-        StringBuilder sql = new StringBuilder("UPDATE bookingoffice SET officeName = ?, tripId = ?");
-        sql.append("officePhone = ?, officePlace = ?, officePrice = ?, startContractDate = ?, endContractDate");
+        StringBuilder sql = new StringBuilder("UPDATE bookingoffice SET officeName = ?, tripId = ?, ");
+        sql.append("officePhone = ?, officePlace = ?, officePrice = ?, startContractDate = ?, endContractDate = ? WHERE officeId = ?");
         update(sql.toString(), updateBookingOffice.getOfficeName(), updateBookingOffice.getTripId(),
                 updateBookingOffice.getOfficePhone(), updateBookingOffice.getOfficePlace(), updateBookingOffice.getOfficePrice(),
-                updateBookingOffice.getStartContractDate(), updateBookingOffice.getEndContractDate());
+                updateBookingOffice.getStartContractDate(), updateBookingOffice.getEndContractDate(), updateBookingOffice.getOfficeId());
     }
 
     @Override
@@ -64,7 +64,7 @@ public class BookingOfficeDAO extends AbstractDAO<BookingOffice> implements IBoo
 
     @Override
     public int getTotalItem() {
-        String sql = "SELECT count(*) FROM employee";
+        String sql = "SELECT count(*) FROM bookingoffice";
         return count(sql);
     }
 }

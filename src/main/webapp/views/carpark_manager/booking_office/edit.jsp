@@ -107,14 +107,16 @@
                   $.each(data, function(index, value) {
                     checkData.push(value)
                   })
-                  if ($.inArray("", checkData) >= 0 || $.inArray(undefined, checkData) >= 0) {
+                    console.log(checkData)
+                  if ($.inArray("", checkData) >= 0 || $.inArray(undefined, checkData) >= 0 || $.inArray("Invalid date", checkData) >= 0) {
                     alert("Please insert full information!")
                   } else {
                     var id = $('#id').val();
                     if (id == "") {
                       addNew(data)
                     } else {
-                      data["employeeId"] = id
+                      data["officeId"] = id
+                        console.log(data)
                       updateNew(data)
                     }
                   }
@@ -129,7 +131,7 @@
                         dataType: 'json',
                         success: function(result) {
                             <%--window.location.href = "${NewURL}?type=edit&id="+result.id+"&message=insert_success";--%>
-                            window.location.href = "${NewURL}?type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"
+                            window.location.href = "${NewURL}?type=list&page=1&maxPageItem=2&sortName=officeId&sortBy=desc"
                         },
                         error: function(error) {
                             window.location.href = "${NewURL}?type=list&maxPageItem=3&page=1&message=error_system";
@@ -145,11 +147,11 @@
                         data: JSON.stringify(data),
                         dataType: 'json',
                         success: function(result) {
-                            window.location.href = "${NewURL}?type=edit&id=" + result.officeId + "&message=update_success";
-                            window.location.href = "${NewURL}?type=type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"
+                            <%--window.location.href = "${NewURL}?type=edit&id=" + result.officeId + "&message=update_success";--%>
+                            window.location.href = "${NewURL}?type=list&page=1&maxPageItem=2&sortName=officeId&sortBy=desc"
                         },
                         error: function(error) {
-                            window.location.href = "${NewURL}?type=list&maxPageItem=3&page=1&message=error_system";
+                            window.location.href = "${NewURL}?type=list&maxPageItem=2&page=1&message=error_system";
                         }
                     });
                 }

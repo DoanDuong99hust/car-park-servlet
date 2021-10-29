@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="w-100 bg-light border border-5 border-bottom-secondary">
+        <div class="d-flex justify-content-between p-2">
+            <span id="backto-edit" class="text-secondary"><i class="fas fa-users"></i> Employee</span>
+            <div class="user-option text-primary">
+                <span>Welcome, {user name}</span>
+                <span>Logout <i class="fas fa-sign-out-alt"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="row w-100">
+            <!-- Left menu  -->
+            <div class="col-sm-3 bg-light p-0 border h-auto">
+                <div class="bg-light border">
+                    <div class="row mt-3 mb-3 justify-content-center">
+                        <span class="text-primary"><i class="fas fa-home"></i> Car park manager</span>
+                    </div>
+                </div>
+                <div>
+                    <div id="car-management" class="dropdown bg-light">
+                        <div class="btn btn-light d-flex justify-content-center dropdown-toggle" data-toggle="dropdown">
+                            <span> <i class="fas fa-car"></i> Car Management</span>
+                        </div>
+                        <div class="dropdown-menu bg-light border-0">
+                            <a class="dropdown-item" href='<c:url value="/employee-list?type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"/>'><i class="fas fa-list"></i> Employee list</a>
+                            <a class="dropdown-item" href='<c:url value="/employee-list?type=edit"/>'><i class="fas fa-plus"></i> Add employee</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="booking-office" class="dropdown bg-light">
+                        <div class="btn btn-light d-flex justify-content-center dropdown-toggle" data-toggle="dropdown">
+                            <span> <i class="fas fa-cart-arrow-down"></i> Booking office Management</span>
+                        </div>
+                        <div class="dropdown-menu bg-light border-0">
+                            <a class="dropdown-item" href='<c:url value="/employee-list?type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"/>'><i class="fas fa-list"></i> Employee list</a>
+                            <a class="dropdown-item" href='<c:url value="/employee-list?type=edit"/>'><i class="fas fa-plus"></i> Add employee</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="parking-lot" class="dropdown bg-light">
+                        <div class="btn btn-light d-flex justify-content-center dropdown-toggle" data-toggle="dropdown">
+                            <span> <i class="fas fa-map-marker-alt"></i> Parking lot Management</span>
+                        </div>
+                        <div class="dropdown-menu bg-light border-0">
+                            <a class="dropdown-item" href='<c:url value="/parkinglot-list?type=list"/>'><i class="fas fa-list"></i> Parking lot list</a>
+                            <a class="dropdown-item" href='<c:url value="/parkinglot-list?type=edit"/>'><i class="fas fa-plus"></i> Add employee</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Right content  -->
+
+            <div class="col-sm-9">
+                <h2 class="pt-3">Parking lot list</h2>
+                <hr class="border">
+                <div class="d-flex justify-content-between">
+                    <div class="search-filter d-flex">
+                        <div class="filter m-1 border rounded bg-light">
+                            <label class="m-0 pl-1"><i class="fas fa-filter"></i> Filter By</label>
+                            <select class="h-100 p-1 border-left border-bottom-0 border-right-0 border-top-0" name="deparment" id="deparment">
+                                <option value="employee">Name</option>
+                                <option value="manager">Phone</option>
+                            </select>
+                        </div>
+                        <div class="search m-1 border rounded bg-light">
+                            <form class="" action="/action_page.php">
+                                <label class="m-0 pl-1" for="gsearch"><i class="fas fa-search"></i></label>
+                                <input class="h-100 p-1 border-left border-bottom-0 border-right-0 border-top-0" type="search" id="gsearch" name="gsearch" placeholder="User search">
+                            </form>
+                        </div>
+                        <div class="btn btn-primary pt-0 pb-0  m-1">Search</div>
+                    </div>
+                </div>
+
+                <form action="<c:url value='/car-park-parking-lot-list'/>" id="formSubmit" method="get">
+                    <div class="main-content-inner">
+                        <div class="page-content">
+                            <!-- Add profile  -->
+                            <c:if test="${not empty messageResponse}">
+                                <div class="alert alert-${alert}">
+                                    ${messageResponse}
+                                </div>
+                            </c:if>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" id="checkAll"></th>
+                                            <th>Id</th>
+                                            <th>Parking lot</th>
+                                            <th>Place</th>
+                                            <th>Area</th>
+                                            <th>Price</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach var="item" items="${model.listResult}">
+                                            <tr>
+                                                <td><input type="checkbox" id="checkbox_${item.parkId}" value="${item.parkId}"></td>
+                                                <td id="id1" value="1">${item.parkId}</td>
+                                                <td>${item.parkName}</td>
+                                                <td>${item.parkPlace}</td>
+                                                <td>${item.parkArea}</td>
+                                                <td>${item.parkPrice}</td>
+                                                <td>${item.parkStatus}</td>
+                                                <td>
+                                                    <c:url var="editURL " value="/car-park-parking-lot-list ">
+                                                        <c:param name="type " value="edit " />
+                                                        <c:param name="parkId " value="${item.parkId} " />
+                                                    </c:url>
+                                                    <a class="btn btn-sm btn-primary btn-edit " data-toggle="tooltip " title="Cập nhật bài viết " href='${editURL}'>
+                                                        <i class="far fa-edit "></i> Edit
+                                                    </a>
+                                                    <div id="btnDelete" class="btn btn-danger m-1 " data-toggle="tooltip " title="Xoá bài viết ">
+                                                        <i class="fas fa-trash-alt "></i> Delete
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
+                                </table>
+                                <ul class="pagination " id="pagination "></ul>
+                                <input type="hidden " value=" " id="page " name="page " />
+                                <input type="hidden " value=" " id="maxPageItem " name="maxPageItem " />
+                                <input type="hidden " value=" " id="sortName " name="sortName " />
+                                <input type="hidden " value=" " id="sortBy " name="sortBy " />
+                                <input type="hidden " value=" " id="type " name="type " />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous ">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous ">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous ">
+            </script>
+            <script type="text/javascript ">
+                $("#btnDelete").click(function() {
+                    var data = {};
+                    console.log(1);
+                    var ids = $("#id1").attr(value)
+                    console.log(ids);
+                    data['ids'] = ids;
+                });
+            </script>
+</body>
+
+</html>
