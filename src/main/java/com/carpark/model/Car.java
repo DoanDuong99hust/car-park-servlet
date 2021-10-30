@@ -1,12 +1,20 @@
 package com.carpark.model;
 
-public class Car {
+public class Car extends AbstractModel<Car> {
 
+	private Long carId;
 	private String licensePlate;
 	private String carType;
 	private String carColor;
 	private String company;
 	private Long parkId;
+
+	public Long getCarId() {
+		return carId;
+	}
+	public void setCarId(Long carId) {
+		this.carId = carId;
+	}
 	public String getLicensePlate() {
 		return licensePlate;
 	}

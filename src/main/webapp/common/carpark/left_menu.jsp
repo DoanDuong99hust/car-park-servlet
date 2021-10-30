@@ -21,8 +21,8 @@
             <span> <i class="fas fa-car"></i> Car Management</span>
         </div>
         <div class="dropdown-menu bg-light border-0">
-            <a class="dropdown-item" href='<c:url value="/employee-list?type=list&page=1&maxPageItem=3&sortName=employeeId&sortBy=desc"/>'><i class="fas fa-list"></i> Car list</a>
-            <a class="dropdown-item" href='<c:url value="/employee-list?type=edit"/>'><i class="fas fa-plus"></i> Add car</a>
+            <a class="dropdown-item" href='<c:url value="/car-park-car-list?type=list&page=1&maxPageItem=2&sortName=carId&sortBy=desc"/>'><i class="fas fa-list"></i> Car list</a>
+            <a class="dropdown-item" href='<c:url value="/car-park-car-list?type=edit"/>'><i class="fas fa-plus"></i> Add car</a>
         </div>
     </div>
     <div class="dropdown bg-light" style="height: 110px">
