@@ -15,14 +15,14 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-<!--  <filter>-->
-<!--    <filter-name>servletFilter</filter-name>-->
-<!--    <filter-class>com.laptrinhjavaweb.filter.AuthorizationFilter</filter-class>-->
-<!--  </filter>-->
-<!--  <filter-mapping>-->
-<!--    <filter-name>servletFilter</filter-name>-->
-<!--    <url-pattern>/*</url-pattern>-->
-<!--  </filter-mapping>-->
+  <filter>
+    <filter-name>servletFilter</filter-name>
+    <filter-class>com.carpark.filter.AuthorizationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>servletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 
 <!--  <session-config>-->
 <!--    <tracking-mode>COOKIE</tracking-mode>-->

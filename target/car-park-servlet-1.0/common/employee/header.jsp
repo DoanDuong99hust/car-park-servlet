@@ -13,8 +13,8 @@
     <div class="d-flex justify-content-between p-2">
         <span id="backto-edit" class="text-secondary"><i class="fas fa-users"></i> Employee</span>
         <div class="user-option text-primary">
-            <span>Welcome, {user name}</span>
-            <span>Logout <i class="fas fa-sign-out-alt"></i></span>
+            <span>Welcome, ${USERMODEL.fullName}</span>
+            <a href="<c:url value="/logout?action=logout"/> ">Logout <i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
 </div>
