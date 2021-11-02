@@ -43,4 +43,22 @@
             <a class="dropdown-item" href='<c:url value="/car-park-parking-lot-list?type=edit"/>'><i class="fas fa-plus"></i> Add Parking lot</a>
         </div>
     </div>
+    <div class="dropdown bg-light" style="height: 110px">
+        <div class="btn btn-light d-flex justify-content-center dropdown-toggle" data-toggle="dropdown">
+            <span> <i class="fas fa-map-marker-alt"></i> Ticket Management</span>
+        </div>
+        <div class="dropdown-menu bg-light border-0">
+            <a class="dropdown-item" href='<c:url value="/car-park-ticket-list?type=list&page=1&maxPageItem=2&sortName=ticketId&sortBy=desc"/>'><i class="fas fa-list"></i> Ticket list</a>
+            <a class="dropdown-item" href='<c:url value="/car-park-ticket-list?type=edit"/>'><i class="fas fa-plus"></i> Add ticket</a>
+        </div>
+    </div>
+    <div class="dropdown bg-light" style="height: 110px">
+        <div class="btn btn-light d-flex justify-content-center dropdown-toggle" data-toggle="dropdown">
+            <span> <i class="fas fa-map-marker-alt"></i> Trip Management</span>
+        </div>
+        <div class="dropdown-menu bg-light border-0">
+            <a class="dropdown-item" href='<c:url value="/car-park-trip-list?type=list&page=1&maxPageItem=2&sortName=tripId&sortBy=desc"/>'><i class="fas fa-list"></i> Trip list</a>
+            <a class="dropdown-item" href='<c:url value="/car-park-trip-list?type=edit"/>'><i class="fas fa-plus"></i> Add trip</a>
+        </div>
+    </div>
 </div>

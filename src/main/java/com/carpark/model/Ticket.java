@@ -2,12 +2,12 @@ package com.carpark.model;
 
 import java.sql.Time;
 
-public class Ticket {
+public class Ticket extends AbstractModel<Ticket>{
 	
 	private Long ticketId;
 	private Long tripId;
 	private String customerName;
-	private Time bookingTime;
+	private String bookingTime;
 	private String licensePlate;
 	
 	public Long getTicketId() {
@@ -28,10 +28,10 @@ public class Ticket {
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
-	public Time getBookingTime() {
+	public String getBookingTime() {
 		return bookingTime;
 	}
-	public void setBookingTime(Time bookingTime) {
+	public void setBookingTime(String bookingTime) {
 		this.bookingTime = bookingTime;
 	}
 	public String getLicensePlate() {

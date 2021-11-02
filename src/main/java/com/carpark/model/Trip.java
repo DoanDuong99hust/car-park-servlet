@@ -3,16 +3,16 @@ package com.carpark.model;
 import java.sql.Date;
 import java.sql.Time;
 
-public class Trip {
+public class Trip extends AbstractModel<Trip>{
 
 	private Long tripId;
-	private String bookedTicketNumber;
+	private Integer bookedTicketNumber;
 	private String carType;
-	private Date departureDate;
-	private Time departureTime;
+	private String departureDate;
+	private String departureTime;
 	private String destination;
-	private String diver;
-	private Integer maximunOnlineTicketNumber;
+	private String driverName;
+	private Integer maximumOnlineTicketNumber;
 	
 	public Long getTripId() {
 		return tripId;
@@ -20,10 +20,10 @@ public class Trip {
 	public void setTripId(Long tripId) {
 		this.tripId = tripId;
 	}
-	public String getBookedTicketNumber() {
+	public Integer getBookedTicketNumber() {
 		return bookedTicketNumber;
 	}
-	public void setBookedTicketNumber(String bookedTicketNumber) {
+	public void setBookedTicketNumber(Integer bookedTicketNumber) {
 		this.bookedTicketNumber = bookedTicketNumber;
 	}
 	public String getCarType() {
@@ -32,16 +32,16 @@ public class Trip {
 	public void setCarType(String carType) {
 		this.carType = carType;
 	}
-	public Date getDepartureDate() {
+	public String getDepartureDate() {
 		return departureDate;
 	}
-	public void setDepartureDate(Date departureDate) {
+	public void setDepartureDate(String departureDate) {
 		this.departureDate = departureDate;
 	}
-	public Time getDepartureTime() {
+	public String getDepartureTime() {
 		return departureTime;
 	}
-	public void setDepartureTime(Time departureTime) {
+	public void setDepartureTime(String departureTime) {
 		this.departureTime = departureTime;
 	}
 	public String getDestination() {
@@ -50,17 +50,20 @@ public class Trip {
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-	public String getDiver() {
-		return diver;
+
+	public String getDriverName() {
+		return driverName;
 	}
-	public void setDiver(String diver) {
-		this.diver = diver;
+
+	public void setDriverName(String driverName) {
+		this.driverName = driverName;
 	}
-	public Integer getMaximunOnlineTicketNumber() {
-		return maximunOnlineTicketNumber;
+
+	public Integer getMaximumOnlineTicketNumber() {
+		return maximumOnlineTicketNumber;
 	}
-	public void setMaximunOnlineTicketNumber(Integer maximunOnlineTicketNumber) {
-		this.maximunOnlineTicketNumber = maximunOnlineTicketNumber;
+	public void setMaximumOnlineTicketNumber(Integer maximumOnlineTicketNumber) {
+		this.maximumOnlineTicketNumber = maximumOnlineTicketNumber;
 	}
 	
 	
